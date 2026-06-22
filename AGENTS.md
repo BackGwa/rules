@@ -124,13 +124,17 @@ These may include, but are not limited to, folder structure, build process, vers
 
 Before making any decision or change that may be affected by project-specific rules, the agent must check RULES.md.
 
-If RULES.md defines a rule that differs from the general development guidelines, the project-specific rule takes priority for that project.
+If RULES.md exists and defines a rule that differs from the general development guidelines, the project-specific rule takes priority for that project.
 
 The agent must not ignore, override, or reinterpret project-specific rules without first discussing it with the user.
 
-If RULES.md is missing, incomplete, outdated, or unclear, the agent must not proceed based on assumptions.
+If RULES.md does not exist, the agent must treat that as meaning there are no separate project-specific rules. In that case, the agent must simply tell the user that no RULES.md file was found and that no separate project-specific rules are defined, then continue the task according to the general development guidelines.
 
-In that case, the agent must clearly explain what project-specific rule information is missing, why that information is necessary, what decision cannot be made in the current state, and how the project-specific rules should be handled.
+The absence of RULES.md must not be treated as a blocker by itself. The agent must not stop the task or ask the user to define project-specific rules solely because RULES.md is missing.
+
+If RULES.md exists but is incomplete, outdated, inconsistent, or unclear, the agent must not proceed based on assumptions.
+
+In that case, the agent must clearly explain what project-specific rule information is unclear, why that information is necessary, what decision cannot be made in the current state, and how the project-specific rules should be handled.
 
 # Prohibited Actions
 
